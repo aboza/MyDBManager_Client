@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="execCommand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="command" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="execCommandResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="execCommandResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFunctions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFunctionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFunctionsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTableSpaces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTableSpacesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTableSpacesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProcedures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProceduresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProceduresResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSynonyms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSynonymsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSynonymsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getViews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getViewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getViewsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getIndexes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getIndexesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getIndexesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTriggers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTriggersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTriggersResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTablesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTableDDL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tablename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTableDDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTableDDLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getViewDDL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="viewName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getViewDDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getViewDDLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExecPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="script" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExecPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getExecPlanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDBFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DBname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDBFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDBFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSchemaData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSchemaDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSchemaDataResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getInfoSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInfoSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInfoSesionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="execCommandSoapIn">
+    <wsdl:part name="parameters" element="tns:execCommand" />
+  </wsdl:message>
+  <wsdl:message name="execCommandSoapOut">
+    <wsdl:part name="parameters" element="tns:execCommandResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFunctionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getFunctions" />
+  </wsdl:message>
+  <wsdl:message name="getFunctionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getFunctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTableSpacesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTableSpaces" />
+  </wsdl:message>
+  <wsdl:message name="getTableSpacesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTableSpacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProceduresSoapIn">
+    <wsdl:part name="parameters" element="tns:getProcedures" />
+  </wsdl:message>
+  <wsdl:message name="getProceduresSoapOut">
+    <wsdl:part name="parameters" element="tns:getProceduresResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSynonymsSoapIn">
+    <wsdl:part name="parameters" element="tns:getSynonyms" />
+  </wsdl:message>
+  <wsdl:message name="getSynonymsSoapOut">
+    <wsdl:part name="parameters" element="tns:getSynonymsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getViewsSoapIn">
+    <wsdl:part name="parameters" element="tns:getViews" />
+  </wsdl:message>
+  <wsdl:message name="getViewsSoapOut">
+    <wsdl:part name="parameters" element="tns:getViewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getIndexesSoapIn">
+    <wsdl:part name="parameters" element="tns:getIndexes" />
+  </wsdl:message>
+  <wsdl:message name="getIndexesSoapOut">
+    <wsdl:part name="parameters" element="tns:getIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTriggersSoapIn">
+    <wsdl:part name="parameters" element="tns:getTriggers" />
+  </wsdl:message>
+  <wsdl:message name="getTriggersSoapOut">
+    <wsdl:part name="parameters" element="tns:getTriggersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTablesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTables" />
+  </wsdl:message>
+  <wsdl:message name="getTablesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTableDDLSoapIn">
+    <wsdl:part name="parameters" element="tns:getTableDDL" />
+  </wsdl:message>
+  <wsdl:message name="getTableDDLSoapOut">
+    <wsdl:part name="parameters" element="tns:getTableDDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getViewDDLSoapIn">
+    <wsdl:part name="parameters" element="tns:getViewDDL" />
+  </wsdl:message>
+  <wsdl:message name="getViewDDLSoapOut">
+    <wsdl:part name="parameters" element="tns:getViewDDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExecPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:getExecPlan" />
+  </wsdl:message>
+  <wsdl:message name="getExecPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:getExecPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDBFileSoapIn">
+    <wsdl:part name="parameters" element="tns:getDBFile" />
+  </wsdl:message>
+  <wsdl:message name="getDBFileSoapOut">
+    <wsdl:part name="parameters" element="tns:getDBFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSchemaDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getSchemaData" />
+  </wsdl:message>
+  <wsdl:message name="getSchemaDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getSchemaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInfoSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:getInfoSesion" />
+  </wsdl:message>
+  <wsdl:message name="getInfoSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:getInfoSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="isLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:isLogin" />
+  </wsdl:message>
+  <wsdl:message name="isLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:isLoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MSSQLDataAccesServiceSoap">
+    <wsdl:operation name="execCommand">
+      <wsdl:input message="tns:execCommandSoapIn" />
+      <wsdl:output message="tns:execCommandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFunctions">
+      <wsdl:input message="tns:getFunctionsSoapIn" />
+      <wsdl:output message="tns:getFunctionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTableSpaces">
+      <wsdl:input message="tns:getTableSpacesSoapIn" />
+      <wsdl:output message="tns:getTableSpacesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcedures">
+      <wsdl:input message="tns:getProceduresSoapIn" />
+      <wsdl:output message="tns:getProceduresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSynonyms">
+      <wsdl:input message="tns:getSynonymsSoapIn" />
+      <wsdl:output message="tns:getSynonymsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getViews">
+      <wsdl:input message="tns:getViewsSoapIn" />
+      <wsdl:output message="tns:getViewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getIndexes">
+      <wsdl:input message="tns:getIndexesSoapIn" />
+      <wsdl:output message="tns:getIndexesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTriggers">
+      <wsdl:input message="tns:getTriggersSoapIn" />
+      <wsdl:output message="tns:getTriggersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTables">
+      <wsdl:input message="tns:getTablesSoapIn" />
+      <wsdl:output message="tns:getTablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTableDDL">
+      <wsdl:input message="tns:getTableDDLSoapIn" />
+      <wsdl:output message="tns:getTableDDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getViewDDL">
+      <wsdl:input message="tns:getViewDDLSoapIn" />
+      <wsdl:output message="tns:getViewDDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExecPlan">
+      <wsdl:input message="tns:getExecPlanSoapIn" />
+      <wsdl:output message="tns:getExecPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDBFile">
+      <wsdl:input message="tns:getDBFileSoapIn" />
+      <wsdl:output message="tns:getDBFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSchemaData">
+      <wsdl:input message="tns:getSchemaDataSoapIn" />
+      <wsdl:output message="tns:getSchemaDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInfoSesion">
+      <wsdl:input message="tns:getInfoSesionSoapIn" />
+      <wsdl:output message="tns:getInfoSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isLogin">
+      <wsdl:input message="tns:isLoginSoapIn" />
+      <wsdl:output message="tns:isLoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MSSQLDataAccesServiceSoap" type="tns:MSSQLDataAccesServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="execCommand">
+      <soap:operation soapAction="http://tempuri.org/execCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFunctions">
+      <soap:operation soapAction="http://tempuri.org/getFunctions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTableSpaces">
+      <soap:operation soapAction="http://tempuri.org/getTableSpaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcedures">
+      <soap:operation soapAction="http://tempuri.org/getProcedures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSynonyms">
+      <soap:operation soapAction="http://tempuri.org/getSynonyms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getViews">
+      <soap:operation soapAction="http://tempuri.org/getViews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIndexes">
+      <soap:operation soapAction="http://tempuri.org/getIndexes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTriggers">
+      <soap:operation soapAction="http://tempuri.org/getTriggers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTables">
+      <soap:operation soapAction="http://tempuri.org/getTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTableDDL">
+      <soap:operation soapAction="http://tempuri.org/getTableDDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getViewDDL">
+      <soap:operation soapAction="http://tempuri.org/getViewDDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExecPlan">
+      <soap:operation soapAction="http://tempuri.org/getExecPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDBFile">
+      <soap:operation soapAction="http://tempuri.org/getDBFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchemaData">
+      <soap:operation soapAction="http://tempuri.org/getSchemaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoSesion">
+      <soap:operation soapAction="http://tempuri.org/getInfoSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isLogin">
+      <soap:operation soapAction="http://tempuri.org/isLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MSSQLDataAccesServiceSoap12" type="tns:MSSQLDataAccesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="execCommand">
+      <soap12:operation soapAction="http://tempuri.org/execCommand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFunctions">
+      <soap12:operation soapAction="http://tempuri.org/getFunctions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTableSpaces">
+      <soap12:operation soapAction="http://tempuri.org/getTableSpaces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcedures">
+      <soap12:operation soapAction="http://tempuri.org/getProcedures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSynonyms">
+      <soap12:operation soapAction="http://tempuri.org/getSynonyms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getViews">
+      <soap12:operation soapAction="http://tempuri.org/getViews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIndexes">
+      <soap12:operation soapAction="http://tempuri.org/getIndexes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTriggers">
+      <soap12:operation soapAction="http://tempuri.org/getTriggers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTables">
+      <soap12:operation soapAction="http://tempuri.org/getTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTableDDL">
+      <soap12:operation soapAction="http://tempuri.org/getTableDDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getViewDDL">
+      <soap12:operation soapAction="http://tempuri.org/getViewDDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExecPlan">
+      <soap12:operation soapAction="http://tempuri.org/getExecPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDBFile">
+      <soap12:operation soapAction="http://tempuri.org/getDBFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchemaData">
+      <soap12:operation soapAction="http://tempuri.org/getSchemaData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoSesion">
+      <soap12:operation soapAction="http://tempuri.org/getInfoSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isLogin">
+      <soap12:operation soapAction="http://tempuri.org/isLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MSSQLDataAccesService">
+    <wsdl:port name="MSSQLDataAccesServiceSoap" binding="tns:MSSQLDataAccesServiceSoap">
+      <soap:address location="http://localhost:51561/MSSQLDataAccesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MSSQLDataAccesServiceSoap12" binding="tns:MSSQLDataAccesServiceSoap12">
+      <soap12:address location="http://localhost:51561/MSSQLDataAccesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

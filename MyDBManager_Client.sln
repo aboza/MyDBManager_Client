@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MyDBManager_Client", "http://localhost:49507", "{78222C64-718C-4974-BC2C-061389A76D7A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49507"
+		Debug.AspNetCompiler.PhysicalPath = "..\MyDBManager_Client\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49507\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49507"
+		Release.AspNetCompiler.PhysicalPath = "..\MyDBManager_Client\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49507\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\MyDBManager_Client\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78222C64-718C-4974-BC2C-061389A76D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78222C64-718C-4974-BC2C-061389A76D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
