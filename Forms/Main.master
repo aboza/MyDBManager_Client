@@ -17,6 +17,6 @@
         </asp:ContentPlaceHolder>
     </div>
     <script src="../Scripts/bootstrap.js"></script>
-    <script src="../Scripts/jquery-2.1.4.min.js"
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
 </body>
 </html>
