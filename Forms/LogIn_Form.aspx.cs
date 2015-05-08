@@ -8,24 +8,38 @@ using System.Xml;
 
 public partial class Forms_LogIn_Form : System.Web.UI.Page
 {
-    OracleService.ORACLEDataAccesService servicioOracle;
-    MSSQLService.MSSQLDataAccesService servicioSQL;
+    //Service References
+    OracleService.ORACLEDataAccesService vOracleService;
+    MSSQLService.MSSQLDataAccesService vMSSQLService;
+
+    //OnLoad we instance our dataBase Services
     protected void Page_Load(object sender, EventArgs e)
     {
-        servicioOracle = new OracleService.ORACLEDataAccesService();
-        servicioSQL = new MSSQLService.MSSQLDataAccesService();
+        vOracleService = new OracleService.ORACLEDataAccesService();
+        vMSSQLService = new MSSQLService.MSSQLDataAccesService();
     }
-    protected void btnMetadata_Click(object sender, EventArgs e)
+
+    //Information complete to procceed
+    private Boolean isRequiredInformationComplete()
     {
-        if (txtBase.Text.Equals("") || txtPass.Text.Equals("") || txtUser.Text.Equals("")) //Se debe llenar todos los campos
+        if (txtBase.Text.Equals("") || txtPass.Text.Equals("") || txtUser.Text.Equals(""))
+            return false;
+        else
+            return true;
+    }
+
+    //Try to LogIn to MSSSQL or ORACLE with user provided credentials
+    private void DoLogIn()
+    {
+        if (!isRequiredInformationComplete())
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Debe llenar todos los campos" + "');", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "alertMessage", "alert('" + "insufficient information to proceed" + "');", true);
         }
         else
         {
             if (ddlDatabase.SelectedValue.Equals("0"))
             {
-                if (servicioOracle.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
+                if (vOracleService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
                 {
                     Session["user"] = txtUser.Text;
                     Session["mode"] = ddlDatabase.SelectedValue;
@@ -35,12 +49,12 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Base, usuario o contraseña incorrectas" + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "LogIn Failed for user " + txtUser.Text + "');", true);
                 }
             }
             else
             {
-                if (servicioSQL.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
+                if (vMSSQLService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
                 {
                     Session["user"] = txtUser.Text;
                     Session["mode"] = ddlDatabase.SelectedValue;
@@ -50,10 +64,18 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Base, usuario o contraseña incorrectas" + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "LogIn Failed for user " + txtUser.Text + "');", true);
                 }
             }
         }
+
+    }
+
+    //onClickEvent of LogIn
+    protected void btnLogIn_Click(object sender, EventArgs e)
+    {
+        DoLogIn();
+
     }
 
 
