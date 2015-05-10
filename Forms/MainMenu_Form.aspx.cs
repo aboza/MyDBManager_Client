@@ -13,9 +13,10 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     OracleService.ORACLEDataAccesService servicioOracle;
     MSSQLService.MSSQLDataAccesService servicioSQL;
     int mode;
-    string usuario; //usuario de la base
-    string pass;    // contraseña
-    string bases;   //base de datos a la que se conectara
+    string user; 
+    string password;    
+    string dataBase; 
+    string dataBaseSID; //SID para ORACLE DataBases
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,21 +24,28 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
         servicioSQL = new MSSQLService.MSSQLDataAccesService();
 
         mode = int.Parse(Session["mode"].ToString());
-        usuario = Session["user"].ToString();
-        pass = Session["password"].ToString();
-        bases = Session["bases"].ToString();
-
+        user = Session["user"].ToString();
+        password = Session["password"].ToString();
+        if (mode == 0)
+        {
+            dataBaseSID = Session["dataBaseSID"].ToString();
+        }
+        else
+        {
+            dataBase = Session["bases"].ToString();
+        }
     }
+
     protected void btnTrigger_Click(object sender, EventArgs e)
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getTriggers(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getTriggers(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getTriggers(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getTriggers(user, dataBase, password);
             fillGridView(xmlDocument);
         }
     } // ver los triggers
@@ -45,12 +53,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getInfoSesion(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getInfoSesion(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getInfoSesion(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getInfoSesion(user, dataBase, password);
             fillGridView(xmlDocument);
         }
 
@@ -70,12 +78,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getFunctions(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getFunctions(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getFunctions(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getFunctions(user, dataBase, password);
             fillGridView(xmlDocument);
         }
     }  //ver funciones
@@ -83,12 +91,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getProcedures(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getProcedures(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getProcedures(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getProcedures(user, dataBase, password);
             fillGridView(xmlDocument);
         }
     }  //ver procedimientos
@@ -103,12 +111,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getTablespaces(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getTablespaces(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getTableSpaces(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getTableSpaces(user, dataBase, password);
             fillGridView(xmlDocument);
         }
     }  //ver los table espaces 
@@ -116,12 +124,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getTables(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getTables(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getTables(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getTables(user, dataBase, password);
             fillGridView(xmlDocument);
         }
     }  //ver todas las tablas
@@ -129,12 +137,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getSynonyms(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getSynonyms(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getSynonyms(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getSynonyms(user, dataBase, password);
             fillGridView(xmlDocument);
         }
     }  //ver todos los sinonimos
@@ -142,12 +150,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getViews(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getViews(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getViews(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getViews(user, dataBase, password);
             fillGridView(xmlDocument);
         }
     }  //ver todas las vistas
@@ -155,12 +163,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.execCommand(usuario, bases, pass, txtArea.Text);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.execCommand(user, dataBaseSID, password, txtArea.Text);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.execCommand(usuario, bases, pass, txtArea.Text);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.execCommand(user, dataBase, password, txtArea.Text);
             fillGridView(xmlDocument);
         }
     }  //ejecutar un querry
@@ -183,12 +191,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.execCommand(usuario, bases, pass, txtArea.Text);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.execCommand(user, dataBaseSID, password, txtArea.Text);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.execCommand(usuario, bases, pass, txtArea.Text);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.execCommand(user, dataBase, password, txtArea.Text);
             fillGridView(xmlDocument);
         }
     } //ejecutar un query
@@ -196,12 +204,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.execPlan(usuario, bases, pass, txtArea.Text);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.execPlan(user, dataBaseSID, password, txtArea.Text);
             fillGridView(xmlDocument);
         }
         else
         {
-            string xmlDocument = (string)servicioSQL.getExecPlan(usuario, bases, pass, txtArea.Text);
+            string xmlDocument = (string)servicioSQL.getExecPlan(user, dataBase, password, txtArea.Text);
             txtArea.Text = xmlDocument;
         }
     } //plan de ejecucion de un query
@@ -209,19 +217,19 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getMetadata(usuario, bases, pass, txtTipo.Text, txtTableSpace.Text);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getMetadata(user, dataBaseSID, password, txtTipo.Text, txtTableSpace.Text);
             fillGridView(xmlDocument);
         }
         else
         {
             if (txtTipo.Text.Equals("view"))
             {
-                string xmlDocument = servicioSQL.getViewDDL(usuario, bases, pass, txtTableSpace.Text);
+                string xmlDocument = servicioSQL.getViewDDL(user, dataBase, password, txtTableSpace.Text);
                 txtArea.Text = xmlDocument;
             }
             else
             {
-                string xmlDocument = servicioSQL.getTableDDL(usuario, bases, pass, txtTableSpace.Text);
+                string xmlDocument = servicioSQL.getTableDDL(user, dataBase, password, txtTableSpace.Text);
                 txtArea.Text = xmlDocument;
             }
         }
@@ -231,12 +239,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getInfoSesion(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getInfoSesion(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)servicioSQL.getInfoSesion(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioSQL.getInfoSesion(user, dataBase, password);
             fillGridView(xmlDocument);
         }
 
@@ -245,12 +253,12 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     {
         if (mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)servicioOracle.getTablespaces(usuario, bases, pass);
+            XmlNode xmlDocument = (XmlNode)servicioOracle.getTablespaces(user, dataBaseSID, password);
             fillGridView(xmlDocument);
         }
         else
         {
-            string[] xmlDocument = servicioSQL.getSchemaData(usuario, bases, pass);
+            string[] xmlDocument = servicioSQL.getSchemaData(user, dataBase, password);
             txtArea.Text = toString(xmlDocument);
         }
     }  //informacion de la base

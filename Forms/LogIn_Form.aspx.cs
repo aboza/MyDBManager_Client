@@ -22,10 +22,21 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
     //Information complete to procceed
     private Boolean isRequiredInformationComplete()
     {
-        if (txtBase.Text.Equals("") || txtPass.Text.Equals("") || txtUser.Text.Equals(""))
-            return false;
+        if (ddlDatabase.SelectedValue.Equals("0"))
+        {
+            if (txtBaseSID.Text.Equals("") || txtPass.Text.Equals("") || txtUser.Text.Equals(""))
+                return false;
+            else
+                return true;
+
+        }
         else
-            return true;
+        {
+            if (txtBase.Text.Equals("") || txtPass.Text.Equals("") || txtUser.Text.Equals(""))
+                return false;
+            else
+                return true;
+        }
     }
 
     //Try to LogIn to MSSSQL or ORACLE with user provided credentials
@@ -39,12 +50,13 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
         {
             if (ddlDatabase.SelectedValue.Equals("0"))
             {
-                if (vOracleService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
+                if (vOracleService.isLogin(txtUser.Text, txtPass.Text, txtBaseSID.Text))
                 {
                     Session["user"] = txtUser.Text;
                     Session["mode"] = ddlDatabase.SelectedValue;
                     Session["password"] = txtPass.Text;
-                    Session["bases"] = txtBase.Text;
+                    //Session["bases"] = txtBase.Text;
+                    Session["dataBaseSID"] = txtBaseSID.Text;
                     Response.Redirect("MainMenu_Form.aspx");
                 }
                 else
