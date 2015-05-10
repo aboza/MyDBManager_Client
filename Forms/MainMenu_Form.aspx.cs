@@ -260,6 +260,6 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     }  // informacion de la base con imagen
     protected void btnLogOut_Click(object sender, EventArgs e)
     {
-        Response.Redirect("FrmInicioSesion.aspx");
+        Response.Redirect("LogIn_Form.aspx");
     }  //cerrar sesion
 }
