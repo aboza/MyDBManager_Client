@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script src="../Scripts/bootstrap.js"></script>
     <title></title>
     <style type="text/css">
         .ccolor:hover
@@ -38,6 +39,7 @@
 </script>
 </head>
 <body>
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
     <form id="form1" runat="server">
         <asp:Panel ID="Panel1" runat="server" Height="71px" BackColor="#333333" style="margin-left: 0px" Width="1343px">
             
@@ -64,7 +66,7 @@
            
         </asp:Panel>
         <asp:Panel ID="Panel2" runat="server" Style="position: absolute; top: 384px; left: 8px; width: 1348px; height: 580px;">
-            <asp:GridView ID="dataTables" runat="server" Width="1262px" Style="position: absolute; top: 9px; left: 23px; height: 266px;" AllowSorting="True" Enabled="False">
+            <asp:GridView CssClass="table table-bordered table-hover table-striped" ID="dataTables" runat="server" Width="1262px" Style="position: absolute; top: 9px; left: 23px; height: 266px;" AllowSorting="True" Enabled="False">
             </asp:GridView>
             <asp:GridView ID="dataError" runat="server" AllowSorting="True" Enabled="False" Style="position: absolute; top: 297px; left: 23px; height: 266px;" Width="1262px">
             </asp:GridView>
