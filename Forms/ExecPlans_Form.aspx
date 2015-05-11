@@ -29,8 +29,14 @@
                                 <label class="control-label" for="textinput">Result</label>
                                 <div class="controls">
                                     <asp:TextBox ID="txtArea" runat="server" Enabled="false" CssClass="form-control input"></asp:TextBox>
-                                    <asp:GridView CssClass="table table-bordered table-hover table-striped" ID="dataTables" runat="server" Width="1262px"  AllowSorting="True" Enabled="False">
-                                    </asp:GridView>
+                                    <div class="table-responsive">
+                                        <asp:GridView CssClass="table table-bordered table-hover table-striped" ID="dataTables" runat="server" Width="1262px"  AllowSorting="True" Enabled="False">
+                                        </asp:GridView>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <asp:GridView CssClass="table table-bordered table-hover table-striped" ID="dataError" runat="server" Width="1262px"  AllowSorting="True" Enabled="False">
+                                        </asp:GridView>
+                                    </div>
                                 </div>
                             </div>
                         </fieldset>

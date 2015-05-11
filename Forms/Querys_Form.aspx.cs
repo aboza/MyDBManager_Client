@@ -7,30 +7,26 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 
-public partial class Forms_ExecPlans_Form : System.Web.UI.Page
+public partial class Forms_Querys_Form : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         divError.Visible = false;
-        if (Constants.mode == 0)
-            txtArea.Visible = false;
-        else
-            dataTables.Visible = false;
     }
-    protected void btnExcPlan_Click(object sender, EventArgs e)
+    protected void btnExcOne_Click(object sender, EventArgs e)
     {
         divError.Visible = false;
         try
         {
             if (Constants.mode == 0)
             {
-                XmlNode xmlDocument = Constants.servicioOracle.execPlan(Constants.user, Constants.dataBase, Constants.password, txtConsult.Text);
+                XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.execCommand(Constants.user, Constants.dataBaseSID, Constants.password, txtConsult.Text);
                 fillGridView(xmlDocument);
             }
             else
             {
-                string xmlDocument = (string)Constants.servicioSQL.getExecPlan(Constants.user, Constants.dataBase, Constants.password, txtConsult.Text);
-                txtArea.Text = xmlDocument;
+                XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.execCommand(Constants.user, Constants.dataBase, Constants.password, txtConsult.Text);
+                fillGridView(xmlDocument);
             }
         }
         catch (Exception ex)
@@ -38,11 +34,7 @@ public partial class Forms_ExecPlans_Form : System.Web.UI.Page
             divError.Visible = true;
             labelError.Text = ex.Message;
         }
-    } //plan de ejecucion de un query
-    protected void btnLogOut_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("LogIn_Form.aspx");
-    }  //cerrar sesion
+    }  //ejecutar un querry
     private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
     {
         XmlDataDocument doc = new XmlDataDocument();

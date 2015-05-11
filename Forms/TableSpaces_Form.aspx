@@ -15,8 +15,10 @@
                                 <asp:GridView  ID="dataTables" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
                                 </asp:GridView>
                             </div>
-                            <asp:GridView  ID="dataError" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
-                            </asp:GridView>
+                            <div class="table-responsive">
+                                <asp:GridView  ID="dataError" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
+                                </asp:GridView>
+                            </div>
                         </asp:Panel>    
                     </fieldset>
                 </form>

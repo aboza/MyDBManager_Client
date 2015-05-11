@@ -19,10 +19,14 @@
                             <asp:Button ID="btnTrigger" runat="server" Text="Triggers" CssClass="btn btn-primary" OnClick="btnTrigger_Click" />
                             <asp:Button ID="btnFunciones" runat="server" CssClass="btn btn-primary" OnClick="btnFunciones_Click"  Text="Funtions" />
                         <asp:Panel runat="server">
-                            <asp:GridView  ID="dataTables" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
-                            </asp:GridView>
-                            <asp:GridView  ID="dataError" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
-                            </asp:GridView>
+                            <div class="table-responsive">
+                                <asp:GridView  ID="dataTables" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
+                                </asp:GridView>
+                            </div>
+                            <div class="table-responsive">
+                                <asp:GridView  ID="dataError" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
+                                </asp:GridView>
+                            </div>
                         </asp:Panel>
                     </fieldset>
                 </form>
