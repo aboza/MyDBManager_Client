@@ -33,6 +33,13 @@
                                 </asp:DropDownList>
                             </div>
                         </div>
+                        <!-- DataBase SID-->
+                        <div class="control-group">
+                            <label class="control-label" for="textinput">DataBase SID</label>
+                            <div class="controls">
+                                <asp:TextBox ID="txtBaseSID" runat="server" placeholder="DataBase SID" CssClass="form-control input"></asp:TextBox>
+                            </div>
+                        </div>
                         <!-- DataBase Instance-->
                         <div class="control-group">
                             <label class="control-label" for="textinput">DataBase</label>

@@ -14,4 +14,5 @@ public static class Constants
     public static string usuario; //usuario de la base
     public static string pass;    // contraseña
     public static string bases;   //base de datos a la que se conectara
+    public static string dataBaseSID; //SID para ocacle
 }
