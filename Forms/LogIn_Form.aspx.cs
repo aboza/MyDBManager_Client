@@ -57,7 +57,7 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
                     Constants.password = txtPass.Text;
                     Constants.dataBase = txtBase.Text;
                     Constants.dataBaseSID = txtBaseSID.Text;
-                    Response.Redirect("MainMenu_Form.aspx");
+                    Response.Redirect("BasicInformation_Form.aspx");
                 }
                 else
                 {
@@ -72,7 +72,7 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
                     Constants.mode = Int32.Parse(ddlDatabase.SelectedValue);
                     Constants.password = txtPass.Text;
                     Constants.dataBase = txtBase.Text;
-                    Response.Redirect("MainMenu_Form.aspx");
+                    Response.Redirect("BasicInformation_Form.aspx");
                 }
                 else
                 {

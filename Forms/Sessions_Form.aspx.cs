@@ -7,34 +7,21 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 
-public partial class Forms_TableSpaces_Form : System.Web.UI.Page
+public partial class Forms_Sessions_Form : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Constants.mode == 0)
         {
-            txtArea.Visible = false;
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getTablespaces(Constants.user, Constants.dataBaseSID, Constants.password);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getInfoSesion(Constants.user, Constants.dataBaseSID, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTableSpaces(Constants.user, Constants.dataBase, Constants.password);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getInfoSesion(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
-            string[] xmlDocument2 = Constants.servicioSQL.getSchemaData(Constants.user, Constants.dataBase, Constants.password);
-            txtArea.Text = toString(xmlDocument2);
         }
     }
-    private string toString(string[] hola)
-    {
-        string nuevo = "";
-        for (int i = 0; i < hola.Length; i++)
-        {
-            nuevo = nuevo + hola[i];
-
-        }
-        return nuevo;
-    } //convertir una lista a un string
     private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
     {
         XmlDataDocument doc = new XmlDataDocument();
@@ -49,5 +36,4 @@ public partial class Forms_TableSpaces_Form : System.Web.UI.Page
         dataError.DataSource = xmlData.Tables["error"];
         dataError.DataBind();
     }
-
 }

@@ -26,6 +26,7 @@
                     <li><a href="MetaData_Form.aspx">MetaData</a></li>
                     <li><a href="TableSpaces_Form.aspx">Table Spaces</a></li>
                     <li><a href="Querys_Form.aspx">Querys</a></li>
+                    <li><a href="Sessions_Form.aspx">Sessions</a></li>
                     <li><a href="LogIn_Form.aspx">LogOut</a></li>
                 </ul>
             </nav>

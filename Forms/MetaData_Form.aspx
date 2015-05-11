@@ -18,11 +18,11 @@
                             <div class="control-group">
                                 <label class="control-label" for="textinput">Consult</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="txtTableSpace" runat="server" placeholder="Input your query to create the execution plan" CssClass="form-control input"></asp:TextBox>
+                                    <asp:TextBox ID="txtTableSpace" runat="server" placeholder="Input the table or view from where you want the meta data" CssClass="form-control input"></asp:TextBox>
                                 </div>
                                 <label class="control-label" for="textinput">Kind</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="txtConsult" runat="server" placeholder="Input your query to create the execution plan" CssClass="form-control input"></asp:TextBox>
+                                    <asp:TextBox ID="txtConsult" runat="server" placeholder="Input the kind of element" CssClass="form-control input"></asp:TextBox>
                                 </div>
                                 <div class="controls">
                                     <asp:Button ID="btnExcPlan" runat="server" Text="Show MetaData" CssClass="btn btn-primary" OnClick="btnMetadata_Click"/>

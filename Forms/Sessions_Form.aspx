@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Forms/Main.master" AutoEventWireup="true" CodeFile="TableSpaces_Form.aspx.cs" Inherits="Forms_TableSpaces_Form" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/Forms/Main.master" AutoEventWireup="true" CodeFile="Sessions_Form.aspx.cs" Inherits="Forms_Sessions_Form" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 
@@ -19,7 +18,6 @@
                                 <asp:GridView  ID="dataError" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
                                 </asp:GridView>
                             </div>
-                            <asp:TextBox ID="txtArea" runat="server" Enabled="false" CssClass="form-control input"></asp:TextBox>
                         </asp:Panel>    
                     </fieldset>
                 </form>

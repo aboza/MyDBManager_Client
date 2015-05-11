@@ -251,7 +251,7 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
     }  //Informacion de la sesion
     protected void btnBasesOne_Click(object sender, EventArgs e)
     {
-        if (mode == 0)
+         if (mode == 0)
         {
             XmlNode xmlDocument = (XmlNode)servicioOracle.getTablespaces(user, dataBaseSID, password);
             fillGridView(xmlDocument);
