@@ -22,10 +22,10 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
         servicioOracle = new OracleService.ORACLEDataAccesService();
         servicioSQL = new MSSQLService.MSSQLDataAccesService();
 
-        mode = int.Parse(Session["mode"].ToString());
-        usuario = Session["user"].ToString();
-        pass = Session["password"].ToString();
-        bases = Session["bases"].ToString();
+        mode = Constants.mode;
+        usuario = Constants.usuario;
+        pass = Constants.pass;
+        bases = Constants.bases;
 
     }
     protected void btnTrigger_Click(object sender, EventArgs e)

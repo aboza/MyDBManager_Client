@@ -12,8 +12,23 @@
 </head>
 <body>
     <div class="container">
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    
+                    <a class="navbar-brand" href="#">MyDBManager</a>
+                    
+                </div>
+                <ul class="nav navbar-nav side-nav">
+                    <li><a href="BasicInformation_Form.aspx">Basic Information</a></li>
+                    <li><a href="ExecPlans_Form.aspx">Execution Plan</a></li>
+                    <li><a href="LogIn_Form.aspx">LogOut</a></li>
+                </ul>
+            </nav>
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
         </asp:ContentPlaceHolder>
     </div>
     <script src="../Scripts/bootstrap.js"></script>

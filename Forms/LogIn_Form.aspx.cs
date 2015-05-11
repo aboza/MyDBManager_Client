@@ -41,10 +41,10 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
             {
                 if (vOracleService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
                 {
-                    Session["user"] = txtUser.Text;
-                    Session["mode"] = ddlDatabase.SelectedValue;
-                    Session["password"] = txtPass.Text;
-                    Session["bases"] = txtBase.Text;
+                    Constants.usuario = txtUser.Text;
+                    Constants.mode = Int32.Parse(ddlDatabase.SelectedValue);
+                    Constants.pass = txtPass.Text;
+                    Constants.bases = txtBase.Text;
                     Response.Redirect("MainMenu_Form.aspx");
                 }
                 else
@@ -56,10 +56,10 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
             {
                 if (vMSSQLService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
                 {
-                    Session["user"] = txtUser.Text;
-                    Session["mode"] = ddlDatabase.SelectedValue;
-                    Session["password"] = txtPass.Text;
-                    Session["bases"] = txtBase.Text;
+                    Constants.usuario = txtUser.Text;
+                    Constants.mode = Int32.Parse(ddlDatabase.SelectedValue);
+                    Constants.pass = txtPass.Text;
+                    Constants.bases = txtBase.Text;
                     Response.Redirect("MainMenu_Form.aspx");
                 }
                 else
