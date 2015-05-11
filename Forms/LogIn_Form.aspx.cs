@@ -52,10 +52,10 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
             {
                 if (vOracleService.isLogin(txtUser.Text, txtPass.Text, txtBaseSID.Text))
                 {
-                    Constants.usuario = txtUser.Text;
+                    Constants.user = txtUser.Text;
                     Constants.mode = Int32.Parse(ddlDatabase.SelectedValue);
-                    Constants.pass = txtPass.Text;
-                    Constants.bases = txtBase.Text;
+                    Constants.password = txtPass.Text;
+                    Constants.dataBase = txtBase.Text;
                     Constants.dataBaseSID = txtBaseSID.Text;
                     Response.Redirect("MainMenu_Form.aspx");
                 }
@@ -68,10 +68,10 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
             {
                 if (vMSSQLService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
                 {
-                    Constants.usuario = txtUser.Text;
+                    Constants.user = txtUser.Text;
                     Constants.mode = Int32.Parse(ddlDatabase.SelectedValue);
-                    Constants.pass = txtPass.Text;
-                    Constants.bases = txtBase.Text;
+                    Constants.password = txtPass.Text;
+                    Constants.dataBase = txtBase.Text;
                     Response.Redirect("MainMenu_Form.aspx");
                 }
                 else

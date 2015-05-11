@@ -17,12 +17,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getTriggers(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getTriggers(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTriggers(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTriggers(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
     }
@@ -40,12 +40,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getFunctions(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getFunctions(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getFunctions(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getFunctions(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
     }  //ver funciones
@@ -53,12 +53,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getProcedures(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getProcedures(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getProcedures(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getProcedures(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
     }  //ver procedimientos
@@ -73,12 +73,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getTablespaces(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getTablespaces(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTableSpaces(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTableSpaces(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
     }  //ver los table espaces 
@@ -86,12 +86,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getTables(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getTables(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTables(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTables(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
     }  //ver todas las tablas
@@ -99,12 +99,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getSynonyms(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getSynonyms(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getSynonyms(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getSynonyms(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
     }  //ver todos los sinonimos
@@ -112,12 +112,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getViews(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getViews(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
         else
         {
-            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getViews(Constants.usuario, Constants.bases, Constants.pass);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getViews(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
     }

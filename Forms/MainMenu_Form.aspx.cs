@@ -24,15 +24,15 @@ public partial class Forms_MainMenu_Form : System.Web.UI.Page
         servicioSQL = new MSSQLService.MSSQLDataAccesService();
 
         mode = Constants.mode;
-        user = Constants.usuario;
-        password = Constants.pass;
+        user = Constants.user;
+        password = Constants.password;
         if (mode == 0)
         {
             dataBaseSID = Constants.dataBaseSID;
         }
         else
         {
-            dataBase = Constants.bases;
+            dataBase = Constants.dataBase;
         }
     }
 

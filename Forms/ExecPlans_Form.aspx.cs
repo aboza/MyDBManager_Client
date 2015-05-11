@@ -24,12 +24,12 @@ public partial class Forms_ExecPlans_Form : System.Web.UI.Page
         {
             if (Constants.mode == 0)
             {
-                XmlNode xmlDocument = Constants.servicioOracle.execPlan(Constants.usuario, Constants.bases, Constants.pass, txtConsult.Text);
+                XmlNode xmlDocument = Constants.servicioOracle.execPlan(Constants.user, Constants.dataBase, Constants.password, txtConsult.Text);
                 //fillGridView(xmlDocument);
             }
             else
             {
-                string xmlDocument = (string)Constants.servicioSQL.getExecPlan(Constants.usuario, Constants.bases, Constants.pass, txtConsult.Text);
+                string xmlDocument = (string)Constants.servicioSQL.getExecPlan(Constants.user, Constants.dataBase, Constants.password, txtConsult.Text);
                 txtArea.Text = xmlDocument;
             }
         }

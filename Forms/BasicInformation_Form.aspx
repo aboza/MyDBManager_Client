@@ -18,7 +18,7 @@
                             <asp:Button ID="btnVistas" runat="server" Text="Views" CssClass="btn btn-primary" OnClick="btnVistas_Click" />
                             <asp:Button ID="btnTrigger" runat="server" Text="Triggers" CssClass="btn btn-primary" OnClick="btnTrigger_Click" />
                             <asp:Button ID="btnFunciones" runat="server" CssClass="btn btn-primary" OnClick="btnFunciones_Click"  Text="Funtions" />
-                        <asp:Panel runat="server" ID="prueba">
+                        <asp:Panel runat="server">
                             <asp:GridView  ID="dataTables" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
                             </asp:GridView>
                             <asp:GridView  ID="dataError" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
