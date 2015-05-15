@@ -5,10 +5,10 @@
       <s:element name="execCommand">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="command" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aCommand" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -28,9 +28,9 @@
       <s:element name="getFunctions">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -50,9 +50,9 @@
       <s:element name="getTableSpaces">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -72,9 +72,9 @@
       <s:element name="getProcedures">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -94,9 +94,9 @@
       <s:element name="getSynonyms">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -116,9 +116,9 @@
       <s:element name="getViews">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -138,9 +138,9 @@
       <s:element name="getIndexes">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -160,9 +160,9 @@
       <s:element name="getTriggers">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -182,9 +182,9 @@
       <s:element name="getTables">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -204,10 +204,10 @@
       <s:element name="getTableDDL">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="tablename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aTablename" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -221,10 +221,10 @@
       <s:element name="getViewDDL">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="viewName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aViewName" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -238,10 +238,10 @@
       <s:element name="getExecPlan">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="script" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aCommand" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -255,10 +255,10 @@
       <s:element name="getDBFile">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DBname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDBName" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -272,9 +272,9 @@
       <s:element name="getSchemaData">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -293,9 +293,9 @@
       <s:element name="getInfoSesion">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -315,9 +315,9 @@
       <s:element name="isLogin">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aDataBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPassword" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
