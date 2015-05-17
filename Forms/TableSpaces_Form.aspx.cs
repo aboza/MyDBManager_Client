@@ -25,20 +25,22 @@ public partial class Forms_TableSpaces_Form : System.Web.UI.Page
             txtArea.Text = toString(xmlDocument2);
         }
     }
-    private string toString(string[] hola)
+
+    private string toString(string[] vStringList)
     {
-        string nuevo = "";
-        for (int i = 0; i < hola.Length; i++)
+        string vStringResult = "";
+        for (int i = 0; i < vStringList.Length; i++)
         {
-            nuevo = nuevo + hola[i];
+            vStringResult = vStringResult + vStringList[i];
 
         }
-        return nuevo;
+        return vStringResult;
     } //convertir una lista a un string
-    private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
+
+    private void fillGridView(XmlNode vXMLNode)  //llena el data gridview
     {
         XmlDataDocument doc = new XmlDataDocument();
-        doc.LoadXml(_xmlNode.OuterXml);
+        doc.LoadXml(vXMLNode.OuterXml);
         XmlNodeReader xmlReader = new XmlNodeReader(doc);
 
         DataSet xmlData = new DataSet();

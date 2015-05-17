@@ -22,10 +22,11 @@ public partial class Forms_Sessions_Form : System.Web.UI.Page
             fillGridView(xmlDocument);
         }
     }
-    private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
+
+    private void fillGridView(XmlNode vXMLNode)  //llena el data gridview
     {
         XmlDataDocument doc = new XmlDataDocument();
-        doc.LoadXml(_xmlNode.OuterXml);
+        doc.LoadXml(vXMLNode.OuterXml);
         XmlNodeReader xmlReader = new XmlNodeReader(doc);
 
         DataSet xmlData = new DataSet();
