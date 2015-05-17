@@ -134,12 +134,13 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     {
         if (Constants.mode == 0)
         {
-
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getUsers(Constants.user, Constants.dataBase, Constants.password);
+            fillGridView(xmlDocument);
         }
         else
         {
-            //XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getUsers (Constants.user, Constants.dataBase, Constants.password);
-            //fillGridView(xmlDocument);
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getUsers (Constants.user, Constants.dataBase, Constants.password);
+            fillGridView(xmlDocument);
         }
     }
 
