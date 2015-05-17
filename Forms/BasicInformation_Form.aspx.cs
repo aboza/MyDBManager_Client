@@ -64,11 +64,19 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     }  //ver procedimientos
     protected void btnPaquete_Click(object sender, EventArgs e) // ver paquetes
     {
-    }
-    protected void btnEsquema_Click(object sender, EventArgs e)
-    {
+        if (Constants.mode == 0)
+        {
+            //ORACLE
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getPackages (Constants.user, Constants.dataBase, Constants.password);
+            fillGridView(xmlDocument);
+        }
+        else
+        {
+            // SQL
 
-    }  //ver todos los esquemas
+        }
+    }
+
     protected void btnTableSpace_Click(object sender, EventArgs e)
     {
         if (Constants.mode == 0)

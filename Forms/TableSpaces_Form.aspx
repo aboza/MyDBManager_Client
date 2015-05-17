@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <body style="background: url('/Images/background.jpg') repeat 0 0;">
+    <body>
         <div>
             <div class="container-fluid">
                 <form runat="server">
@@ -16,9 +16,12 @@
                                 </asp:GridView>
                             </div>
                             <div class="table-responsive">
+                                <br />
                                 <asp:GridView  ID="dataError" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">
                                 </asp:GridView>
                             </div>
+                            <br />
+                            <label class="control-label" for="textinput">TableSpaces:</label>
                             <asp:TextBox ID="txtArea" runat="server" Enabled="false" CssClass="form-control input"></asp:TextBox>
                         </asp:Panel>    
                     </fieldset>

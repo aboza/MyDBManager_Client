@@ -11,7 +11,6 @@
                     <fieldset>
                         <legend>Basic information</legend>
                             <asp:Button ID="btnPaquete" runat="server" Text="Packages" CssClass="btn btn-primary" OnClick="btnPaquete_Click" />
-                            <asp:Button ID="btnEsquema" runat="server" Text="Schemes" CssClass="btn btn-primary" OnClick="btnEsquema_Click" />
                             <asp:Button ID="btnTabla" runat="server" Text="Tables" CssClass="btn btn-primary" OnClick="btnTabla_Click" />
                             <asp:Button ID="btnProc" runat="server" Text="Procedures" CssClass="btn btn-primary" OnClick="btnProc_Click" />
                             <asp:Button ID="btnSinonimos" runat="server" Text="Sinonims" CssClass="btn btn-primary" OnClick="btnSinonimos_Click" />
