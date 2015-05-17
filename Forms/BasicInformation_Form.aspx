@@ -17,6 +17,8 @@
                             <asp:Button ID="btnVistas" runat="server" Text="Views" CssClass="btn btn-primary" OnClick="btnVistas_Click" />
                             <asp:Button ID="btnTrigger" runat="server" Text="Triggers" CssClass="btn btn-primary" OnClick="btnTrigger_Click" />
                             <asp:Button ID="btnFunciones" runat="server" CssClass="btn btn-primary" OnClick="btnFunciones_Click"  Text="Funtions" />
+                            <asp:Button ID="btnUsers" runat="server" Text="Users" CssClass="btn btn-primary" OnClick="btnUsers_Click" />
+
                         <asp:Panel runat="server">
                             <div class="table-responsive">
                                 <asp:GridView  ID="dataTables" CssClass="table table-bordered table-hover table-striped" runat="server" AllowSorting="True" Enabled="False">

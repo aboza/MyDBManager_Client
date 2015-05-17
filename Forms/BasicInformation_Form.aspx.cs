@@ -129,6 +129,23 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
             fillGridView(xmlDocument);
         }
     }
+
+    protected void btnUsers_Click(object sender, EventArgs e)
+    {
+        if (Constants.mode == 0)
+        {
+
+        }
+        else
+        {
+            //XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getUsers (Constants.user, Constants.dataBase, Constants.password);
+            //fillGridView(xmlDocument);
+        }
+    }
+
+
+
+
     private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
     {
         XmlDataDocument doc = new XmlDataDocument();
