@@ -18,6 +18,7 @@
                             <asp:Button ID="btnTrigger" runat="server" Text="Triggers" CssClass="btn btn-primary" OnClick="btnTrigger_Click" />
                             <asp:Button ID="btnFunciones" runat="server" CssClass="btn btn-primary" OnClick="btnFunciones_Click"  Text="Funtions" />
                             <asp:Button ID="btnUsers" runat="server" Text="Users" CssClass="btn btn-primary" OnClick="btnUsers_Click" />
+                            <asp:Button ID="btnPrivilege" runat="server" Text="Privileges" CssClass="btn btn-primary" OnClick="btnPrivilege_Click" />
 
                         <asp:Panel runat="server">
                             <div class="table-responsive">

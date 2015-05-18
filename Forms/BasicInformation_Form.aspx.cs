@@ -144,7 +144,20 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
         }
     }
 
+    protected void btnPrivilege_Click(Object sender, EventArgs e)
+    {
+        if (Constants.mode == 0)
+        {
+            XmlNode xmlDocument = (XmlNode)Constants.servicioOracle.getPrivilege(Constants.user, Constants.dataBase, Constants.password);
+            fillGridView(xmlDocument);
+        }
+        else
+        {
+            XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getPrivilege(Constants.user, Constants.dataBase, Constants.password);
+            fillGridView(xmlDocument);
+        }
 
+    }
 
 
     private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
