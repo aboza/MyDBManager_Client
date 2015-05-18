@@ -39,14 +39,16 @@ public partial class Forms_ExecPlans_Form : System.Web.UI.Page
             labelError.Text = ex.Message;
         }
     } //plan de ejecucion de un query
+
     protected void btnLogOut_Click(object sender, EventArgs e)
     {
         Response.Redirect("LogIn_Form.aspx");
     }  //cerrar sesion
-    private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
+
+    private void fillGridView(XmlNode vXMLNode)  //llena el data gridview
     {
         XmlDataDocument doc = new XmlDataDocument();
-        doc.LoadXml(_xmlNode.OuterXml);
+        doc.LoadXml(vXMLNode.OuterXml);
         XmlNodeReader xmlReader = new XmlNodeReader(doc);
 
         DataSet xmlData = new DataSet();

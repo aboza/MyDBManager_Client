@@ -9,14 +9,14 @@ using System.Xml;
 public partial class Forms_LogIn_Form : System.Web.UI.Page
 {
     //Service References
-    OracleService.ORACLEDataAccesService vOracleService;
-    MSSQLService.MSSQLDataAccesService vMSSQLService;
+    OracleService.ORACLEDataAccesService vOracleDataAccesService;
+    MSSQLService.MSSQLDataAccesService vMSSQLDataAccessService;
 
     //OnLoad we instance our dataBase Services
     protected void Page_Load(object sender, EventArgs e)
     {
-        vOracleService = new OracleService.ORACLEDataAccesService();
-        vMSSQLService = new MSSQLService.MSSQLDataAccesService();
+        vOracleDataAccesService = new OracleService.ORACLEDataAccesService();
+        vMSSQLDataAccessService = new MSSQLService.MSSQLDataAccesService();
     }
 
     //Information complete to procceed
@@ -50,7 +50,7 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
         {
             if (ddlDatabase.SelectedValue.Equals("0"))
             {
-                if (vOracleService.isLogin(txtUser.Text, txtPass.Text, txtBaseSID.Text))
+                if (vOracleDataAccesService.isLogin(txtUser.Text, txtPass.Text, txtBaseSID.Text))
                 {
                     Constants.user = txtUser.Text;
                     Constants.mode = Int32.Parse(ddlDatabase.SelectedValue);
@@ -66,7 +66,7 @@ public partial class Forms_LogIn_Form : System.Web.UI.Page
             }
             else
             {
-                if (vMSSQLService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
+                if (vMSSQLDataAccessService.isLogin(txtUser.Text, txtBase.Text, txtPass.Text))
                 {
                     Constants.user = txtUser.Text;
                     Constants.mode = Int32.Parse(ddlDatabase.SelectedValue);

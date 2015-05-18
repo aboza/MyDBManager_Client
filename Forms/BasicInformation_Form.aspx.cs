@@ -26,16 +26,17 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
             fillGridView(xmlDocument);
         }
     }
-    private string toString(string[] hola)
+    private string toString(string[] aStringList)
     {
-        string nuevo = "";
-        for (int i = 0; i < hola.Length; i++)
+        string vStringResult = "";
+        for (int i = 0; i < aStringList.Length; i++)
         {
-            nuevo = nuevo + hola[i];
+            vStringResult = vStringResult + aStringList[i];
 
         }
-        return nuevo;
+        return vStringResult;
     } //convertir una lista a un string
+
     protected void btnFunciones_Click(object sender, EventArgs e)
     {
         if (Constants.mode == 0)
@@ -49,6 +50,7 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
             fillGridView(xmlDocument);
         }
     }  //ver funciones
+
     protected void btnProc_Click(object sender, EventArgs e)
     {
         if (Constants.mode == 0)
@@ -62,6 +64,7 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
             fillGridView(xmlDocument);
         }
     }  //ver procedimientos
+
     protected void btnPaquete_Click(object sender, EventArgs e) // ver paquetes
     {
         if (Constants.mode == 0)
@@ -89,7 +92,8 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
             XmlNode xmlDocument = (XmlNode)Constants.servicioSQL.getTableSpaces(Constants.user, Constants.dataBase, Constants.password);
             fillGridView(xmlDocument);
         }
-    }  //ver los table espaces 
+    }  //ver los tablespaces 
+
     protected void btnTabla_Click(object sender, EventArgs e)
     {
         if (Constants.mode == 0)
@@ -103,6 +107,7 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
             fillGridView(xmlDocument);
         }
     }  //ver todas las tablas
+
     protected void btnSinonimos_Click(object sender, EventArgs e)
     {
         if (Constants.mode == 0)
@@ -144,6 +149,7 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
         }
     }
 
+<<<<<<< HEAD
     protected void btnPrivilege_Click(Object sender, EventArgs e)
     {
         if (Constants.mode == 0)
@@ -161,9 +167,12 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
 
 
     private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
+=======
+    private void fillGridView(XmlNode vXMLNode)  //llena el data gridview
+>>>>>>> 2644d8e0e27ab0f5dbe54695eaef0dac05323c06
     {
         XmlDataDocument doc = new XmlDataDocument();
-        doc.LoadXml(_xmlNode.OuterXml);
+        doc.LoadXml(vXMLNode.OuterXml);
         XmlNodeReader xmlReader = new XmlNodeReader(doc);
 
         DataSet xmlData = new DataSet();

@@ -17,6 +17,7 @@ public partial class Forms_MetaData_Form : System.Web.UI.Page
         else
             dataTables.Visible = false;
     }
+
     protected void btnMetadata_Click(object sender, EventArgs e)
     {
         divError.Visible = false;
@@ -47,10 +48,11 @@ public partial class Forms_MetaData_Form : System.Web.UI.Page
             labelError.Text = ex.Message;
         }
     } //ddl de un objeto
-    private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
+
+    private void fillGridView(XmlNode vXMLNode)  //llena el data gridview
     {
         XmlDataDocument doc = new XmlDataDocument();
-        doc.LoadXml(_xmlNode.OuterXml);
+        doc.LoadXml(vXMLNode.OuterXml);
         XmlNodeReader xmlReader = new XmlNodeReader(doc);
 
         DataSet xmlData = new DataSet();
