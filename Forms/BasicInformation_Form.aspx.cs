@@ -149,7 +149,7 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
         }
     }
 
-<<<<<<< HEAD
+
     protected void btnPrivilege_Click(Object sender, EventArgs e)
     {
         if (Constants.mode == 0)
@@ -166,10 +166,9 @@ public partial class Forms_BasicInformation_Form : System.Web.UI.Page
     }
 
 
-    private void fillGridView(XmlNode _xmlNode)  //llena el data gridview
-=======
+
     private void fillGridView(XmlNode vXMLNode)  //llena el data gridview
->>>>>>> 2644d8e0e27ab0f5dbe54695eaef0dac05323c06
+
     {
         XmlDataDocument doc = new XmlDataDocument();
         doc.LoadXml(vXMLNode.OuterXml);
